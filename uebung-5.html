@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid</title>
+    <style>
+        body{
+            background-image: linear-gradient(30deg , navy 10%, skyblue 60%, deeppink 90%);
+        }
+        h3{
+            text-shadow: 1px 1px 5px black;
+            text-decoration-line: underline;
+            color: aliceblue;
+        }
+      /* Mutter-Elemente */
+      .versuch-1,
+      .versuch-2,
+      .versuch-3,
+      .versuch-4 {
+        margin: 2px;
+        display: grid;
+        border: ridge 6px skyblue;
+      }
+      /* Gemeinsame Farben */
+      .aussenlinie {
+        outline: 4px outset crimson;
+      }
+      /* Kind-Elemente */
+      .a,
+      .b,
+      .c,
+      .d,
+      .e,
+      .f {
+        border: 2px dashed navy;
+        border-radius: 12px;
+        text-align: center;
+        padding: 8px;
+        margin: 2px;
+      }
+      /* Kind-Elemente einzeln färben*/
+      .a {
+        background-color: bisque;
+      }
+      .b {
+        background-color: cadetblue;
+      }
+      .c {
+        background-color: deeppink;
+      }
+      .d {
+        background-color: lemonchiffon;
+      }
+      .e {
+        background-color: lightpink;
+      }
+      .f {
+        background-color: silver;
+      }
+      /* * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * *
+       * Aufgabe 1
+       * * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * */
+      .versuch-1 {
+        /**** hier geben wir dem Element 3 Spalten ****/
+        grid-template-columns: 33% 33% 33%;
+      }
+      .versuch-1 .element {
+        /**** hier lassen wir das Element in Spalte 3 starten ****/
+        grid-column-start: 3;
+      }
+      /* * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * *
+       * Aufgabe 2
+       * * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * */
+      .versuch-2 {
+        /**** hier geben wir dem Element 4 Spalten ****/
+        grid-template-columns: 25% 25% 25% 25%;
+      }
+      .versuch-2 .element1 {
+        /**** hier lassen wir das Element in Spalte 2 starten ****/
+        grid-column-start: 2;
+      }
+      .versuch-2 .element2 {
+        /**** hier strecken wir das Element wagerecht auf 2 Spalten ****/
+        grid-column-end: span 2;
+      }
+      /* * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * *
+       * Aufgabe 3
+       * * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * */
+      .versuch-3 {
+        /**** hier geben wir dem Element 3 Spalten ****/
+        grid-template-columns: 33% 33% 33%;
+      }
+      .versuch-3 .element3 {
+        /**** hier schieben wir das Element in die 1. Spalte ****/
+        grid-row-start: 1;
+      }
+      /* * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * *
+       * Aufgabe 4
+       * * * * * * * * * * * * * * * * * * *
+       * * * * * * * * * * * * * * * * * * */
+      .versuch-4 {
+        /**** hier geben wir dem Element 2 Spalten ****/
+        grid-template-columns: 50% 50%;
+      }
+      .versuch-4 .element4 {
+        /**** hier strecken wir das Element senkrecht auf 2 Spalten ****/
+        grid-row-end: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <h3>3 Spalten, Beginne ab Spalte 3</h3>
+    <div class="versuch-1 aussenlinie">
+      <div class="a element">1</div>
+      <div class="b">2</div>
+      <div class="c">3</div>
+      <div class="d">4</div>
+      <div class="e">5</div>
+      <div class="f">6</div>
+    </div>
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <h3>
+      4 Spalten, Beginne ab Spalte 2 und Element 3 soll zwei Spalten breit
+      werden
+    </h3>
+    <div class="versuch-2 aussenlinie">
+      <div class="a element1">1</div>
+      <div class="b">2</div>
+      <div class="c element2">3</div>
+      <div class="d">4</div>
+      <div class="e">5</div>
+      <div class="f">6</div>
+      <div class="a">7</div>
+      <div class="b">8</div>
+      <div class="c">9</div>
+    </div>
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <h3>3 Spalten, Das letzte Element soll auf die erste Zeile kommen</h3>
+    <div class="versuch-3 aussenlinie">
+      <div class="a">1</div>
+      <div class="b">2</div>
+      <div class="c">3</div>
+      <div class="d">4</div>
+      <div class="e">5</div>
+      <div class="f element3">6</div>
+    </div>
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <!-- -------------------------- -->
+    <h3>2 Spalten, Die zweite Spalte soll zwei Zeilen hoch sein</h3>
+    <div class="versuch-4 aussenlinie">
+      <div class="a">1</div>
+      <div class="b element4">2</div>
+      <div class="c">3</div>
+      <div class="d">4</div>
+      <div class="e">5</div>
+      <div class="f">6</div>
+    </div>
+  </body>
+</html>
